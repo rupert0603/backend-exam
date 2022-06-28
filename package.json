@@ -1,0 +1,32 @@
+{
+  "name": "backend-exam",
+  "version": "1.0.0",
+  "description": "",
+  "main": "knexfile.js",
+  "scripts": {
+    "test": "jest",
+    "test-all": "jest --runInBand",
+    "dev": "cross-env NODE_ENV=development nodemon server.js",
+    "migrate": "npx knex migrate:latest",
+    "seed": "npx knex seed:run",
+    "seed:admin": "npx knex seed:run --specific=admin_user.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^2.1.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "jest": "^28.1.1",
+    "nodemon": "^2.0.18",
+    "supertest": "^6.2.3"
+  }
+}
