@@ -10,7 +10,8 @@ describe("createEditUserObject", () => {
     .withContact_number("09239999999")
     .credentials("my_email@gmail.com", "myUsername", "myPassword")
     .withRole("USER")
-    .withActiveStatus(1);
+    .withActiveStatus(1)
+    .build();
 
   const filteredUserData = createEditUserObject(user, db.fn.now());
 
@@ -28,5 +29,15 @@ describe("createEditUserObject", () => {
 
   test("must not contain email", () => {
     expect(filteredUserData.email).toEqual(undefined);
+  });
+
+  test("must contain valid properties", () => {
+    expect(filteredUserData.first_name).not.toEqual(undefined);
+    expect(filteredUserData.last_name).not.toEqual(undefined);
+    expect(filteredUserData.address).not.toEqual(undefined);
+    expect(filteredUserData.post_code).not.toEqual(undefined);
+    expect(filteredUserData.contact_phone_number).not.toEqual(undefined);
+    expect(filteredUserData.role).not.toEqual(undefined);
+    expect(filteredUserData.is_active).not.toEqual(undefined);
   });
 });
