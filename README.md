@@ -52,7 +52,7 @@ npm run test-all
 ## Running only a specific test
 
 ```
-npm npm test -- file_name.test.js
+npm test -- file_name.test.js
 ```
 
 ## Endpoints
